@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fefcf5;
+    color: #1e2a2f;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #e9e3d5;
+}
+::-webkit-scrollbar-thumb {
+    background: #c97e3a;
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navbar */
+.navbar {
+    background: #ffffffdd;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #f0e4cf;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    flex-wrap: wrap;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.logo-text h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #bc6f2c, #e6a157);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.logo-text span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #7c5e3a;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #c97e3a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #3c2a1f;
+    transition: 0.2s;
+}
+.nav-links a:hover {
+    color: #c97e3a;
+}
+.btn-reservasi {
+    background: #c97e3a;
+    padding: 8px 20px;
+    border-radius: 40px;
+    color: white !important;
+    font-weight: 700;
+    box-shadow: 0 5px 12px rgba(201,126,58,0.3);
+}
+.btn-reservasi:hover {
+    background: #a86227;
+    transform: scale(0.97);
+}
+
+/* Hero - Full Screen Responsif dengan Ukuran Optimal */
+.hero {
+    background: linear-gradient(107deg, #fff5e8 0%, #ffefdb 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    border-radius: 0 0 40px 40px;
+}
+.hero-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+.hero-text {
+    flex: 1.2;
+}
+.hero-text h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #2d3e3b;
+}
+.hero-text .highlight {
+    color: #c97e3a;
+}
+.hero-text p {
+    margin: 30px 0;
+    font-size: 1.3rem;
+    color: #4c3a28;
+    line-height: 1.7;
+}
+.hero-stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 35px;
+}
+.stat h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #bc6f2c;
+}
+.stat p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 8px;
+}
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.hero-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 32px;
+    box-shadow: 0 30px 40px -15px rgba(0,0,0,0.25);
+    height: auto;
+    min-height: 420px;
+    object-fit: cover;
+}
+.btn-primary {
+    display: inline-block;
+    margin-top: 35px;
+    background: #c97e3a;
+    color: white;
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(201,126,58,0.3);
+}
+.btn-primary:hover {
+    background: #a86227;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(201,126,58,0.4);
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 70px 0;
+    }
+    .hero-text h2 {
+        font-size: 3rem;
+    }
+    .hero-text p {
+        font-size: 1.15rem;
+    }
+    .stat h3 {
+        font-size: 1.9rem;
+    }
+    .stat p {
+        font-size: 1rem;
+    }
+    .hero-img {
+        max-width: 480px;
+        min-height: 350px;
+    }
+    .hero-stats {
+        gap: 35px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 50px 0 60px;
+    }
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+        margin: 20px 0;
+    }
+    .hero-stats {
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .stat h3 {
+        font-size: 1.6rem;
+    }
+    .stat p {
+        font-size: 0.9rem;
+    }
+    .hero-grid {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 35px;
+    }
+    .hero-img {
+        max-width: 100%;
+        min-height: 280px;
+    }
+    .btn-primary {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px 0;
+        background: white;
+        border-radius: 20px;
+        margin-top: 12px;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .btn-reservasi {
+        display: inline-block;
+        width: auto;
+        margin-top: 5px;
+    }
+}
+
+/* Mobile Small (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 0 50px;
+    }
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+    .hero-stats {
+        gap: 20px;
+    }
+    .stat h3 {
+        font-size: 1.3rem;
+    }
+    .stat p {
+        font-size: 0.8rem;
+    }
+    .hero-img {
+        min-height: 220px;
+    }
+    .btn-primary {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Section lainnya */
+.section {
+    padding: 70px 0;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.section-title:after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #c97e3a;
+    margin: 12px auto 0;
+    border-radius: 4px;
+}
+.section-subtitle {
+    text-align: center;
+    color: #6f5a44;
+    margin-bottom: 48px;
+}
+
+/* Armada Grid */
+.armada-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+.armada-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border: 1px solid #f3e7d9;
+}
+.armada-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.12);
+}
+.armada-img img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.armada-card .armada-icon {
+    font-size: 2rem;
+    color: #c97e3a;
+    margin: 16px 0 0 24px;
+}
+.armada-card h3 {
+    font-size: 1.5rem;
+    margin: 8px 24px;
+}
+.armada-card p {
+    margin: 0 24px;
+    color: #6f5a44;
+}
+.armada-detail {
+    list-style: none;
+    margin: 16px 24px;
+}
+.armada-detail li {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+.armada-detail i {
+    color: #e6a157;
+    width: 22px;
+}
+
+/* Destinasi */
+.destinasi-section {
+    background: #faf7f0;
+}
+.destinasi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+.destinasi-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+.destinasi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+.destinasi-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.destinasi-tag {
+    display: inline-block;
+    background: #c97e3a20;
+    color: #c97e3a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 16px 16px 0;
+}
+.destinasi-card h3 {
+    margin: 8px 16px;
+    font-size: 1.2rem;
+}
+.destinasi-card p {
+    margin: 0 16px 20px;
+    color: #6f5a44;
+    font-size: 0.85rem;
+}
+
+/* Estimasi */
+.estimasi-section {
+    background: white;
+}
+.estimasi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+.estimasi-card {
+    background: #fffef7;
+    border-radius: 24px;
+    padding: 24px;
+    border: 1px solid #f0e2d2;
+    transition: 0.3s;
+}
+.estimasi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    border-color: #e6c8a8;
+}
+.estimasi-icon {
+    font-size: 2rem;
+    color: #bc6f2c;
+    margin-bottom: 12px;
+}
+.estimasi-harga {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #bc6f2c;
+    margin: 12px 0 6px;
+}
+.estimasi-ket {
+    color: #6f5a44;
+    font-size: 0.8rem;
+    border-top: 1px solid #f0e2d2;
+    padding-top: 12px;
+    margin-top: 12px;
+}
+.estimasi-footer {
+    text-align: center;
+    margin-top: 40px;
+    background: #fff1e4;
+    padding: 16px;
+    border-radius: 40px;
+}
+
+/* Keunggulan */
+.keunggulan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    text-align: center;
+}
+.keunggulan-item {
+    background: #fff8f0;
+    padding: 28px 16px;
+    border-radius: 28px;
+    transition: 0.3s;
+}
+.keunggulan-item:hover {
+    transform: translateY(-5px);
+    background: #fff3e6;
+}
+.keunggulan-item i {
+    font-size: 2.2rem;
+    color: #c97e3a;
+    margin-bottom: 12px;
+}
+.keunggulan-item h3 {
+    margin-bottom: 8px;
+}
+.keunggulan-item p {
+    color: #6f5a44;
+    font-size: 0.9rem;
+}
+
+/* Testimoni */
+.testimoni-section {
+    background: #fdf8ef;
+}
+.testimoni-slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+}
+.testi-card {
+    background: white;
+    padding: 24px;
+    border-radius: 32px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+.testi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+.testi-card i.fa-quote-left {
+    color: #e6bc8b;
+    font-size: 1.3rem;
+}
+.testi-text {
+    font-style: italic;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+.testi-user {
+    font-weight: 700;
+    margin-top: 12px;
+    color: #c97e3a;
+}
+
+/* Banner */
+.reservation-banner {
+    background: linear-gradient(115deg, #1e2a2f, #2f3e3a);
+    border-radius: 48px;
+    padding: 40px 32px;
+    text-align: center;
+    color: white;
+    margin: 30px 0 50px;
+}
+.phone-number {
+    font-size: 2rem;
+    font-weight: 800;
+    background: #f5b56e;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 60px;
+    margin: 20px 0;
+    color: #2d2b26;
+}
+.banner-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.btn-wa-banner, .btn-call-banner {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+.btn-wa-banner {
+    background: #25D366;
+    color: white;
+}
+.btn-wa-banner:hover {
+    background: #1da15f;
+    transform: scale(0.98);
+}
+.btn-call-banner {
+    background: #ffffff20;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-call-banner:hover {
+    background: #ffffff40;
+}
+
+/* Footer */
+footer {
+    background: #1f2c28;
+    color: #ddcfbe;
+    padding: 40px 0 20px;
+}
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+}
+.footer-grid h4 {
+    margin-bottom: 12px;
+    color: #f3cf9a;
+}
+.footer-grid p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+.copyright {
+    text-align: center;
+    padding-top: 32px;
+    font-size: 0.75rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 20px;
+}
+
+/* Responsive lainnya */
+@media (max-width: 768px) {
+    .phone-number {
+        font-size: 1.3rem;
+        padding: 6px 20px;
+    }
+    .section-title {
+        font-size: 1.6rem;
+    }
+    .armada-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+}
